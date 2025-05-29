@@ -1,18 +1,42 @@
-import java.util.Date;
-import java.util.List;
+import java.util.Objects;
 
 public class Evento {
-    private int id;
     private String nome;
     private String descricao;
-    private Date dataInicio;
-    private Date dataFim;
     private String local;
     private String statusEvento;
+    private Organizador organizador;
 
-    private List<Atividade> atividades;
+    public Evento(String nome, String descricao, String local, String status, Organizador organizador) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.local = local;
+        this.statusEvento = status;
+        this.organizador = organizador;
+    }
 
-    public void criarAtividade() { }
-    public void publicarEvento() { }
-    public void cancelarEvento() { }
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public String getStatusEvento() {
+        return statusEvento;
+    }
+
+    public void setStatusEvento(String statusEvento) {
+        this.statusEvento = statusEvento;
+    }
+
+    public Organizador getOrganizador() {
+        return organizador;
+    }
+    
 }

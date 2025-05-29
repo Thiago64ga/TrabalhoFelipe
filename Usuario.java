@@ -8,9 +8,19 @@ public class Usuario {
    
    
 
+     public Usuario(String nomeUsuario, String email, String senha, int cpf, int telefone, Date dataCadastro) {
+    this.nomeUsuario = nomeUsuario;
+    this.email = email;
+    this.senha = senha;
+    this.cpf = cpf;
+    this.telefone = telefone;
+    this.dataCadastro = dataCadastro;
+    }
+
+
      public String getnomeUsuario() {return nomeUsuario;}
 
-    public void setNome(String nome) {this.nomeUsuario = nomeUsuario;}
+    public void setnomeUsuario(String nomeUsuario) {this.nomeUsuario = nomeUsuario;}
 
     public String getEmail() {return email;}
 
@@ -33,7 +43,7 @@ public class Usuario {
     public void setDataCadastro(Date dataCadastro) {this.dataCadastro = dataCadastro;}
 
 
-        public void cadatrar(String nomeUsuarioUsuario, String email, String senha, int cpf, int telefone, Date dataCadastro) {
+        public void cadatrar(String nomeUsuario, String email, String senha, int cpf, int telefone, Date dataCadastro) {
         this.nomeUsuario = nomeUsuario;
         this.email = email;
         this.senha = senha;

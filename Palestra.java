@@ -6,11 +6,3 @@ public class Palestra extends Atividade {
     public void iniciarTransmissao() { }
 }
 
-public class Workshop extends Atividade {
-    private String materiaisNecessarios;
-    private int duracaoHoras;
-    private boolean possuiCertificado;
-
-    public void definirPreRequisito() { }
-    public void avaliarParticipante() { }
-}
