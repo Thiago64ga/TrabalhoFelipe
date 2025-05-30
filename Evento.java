@@ -1,4 +1,4 @@
-import java.util.Objects;
+
 
 public class Evento {
     private String nome;

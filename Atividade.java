@@ -58,6 +58,48 @@ public class Atividade {
     public void cancelarAtividade() {
         this.cancelada = false;
     }
+    public String getTipoDeAtividade() {
+        return tipoDeAtividade;
+    }
+    public Sala getSala() {
+        return sala;
+    }
+    public Sala getSalaAgendada() {
+        return salaAgendada;
+    }
+    public ArrayList<String> getPalestrantes() {
+        return palestrantes;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    public void setDataHorarioInicio(Date dataHorarioInicio) {
+        this.dataHorarioInicio = dataHorarioInicio;
+    }
+    public void setDataHorarioFim(Date dataHorarioFim) {
+        this.dataHorarioFim = dataHorarioFim;
+    }
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+    public void setTipoDeAtividade(String tipoDeAtividade) {
+        this.tipoDeAtividade = tipoDeAtividade;
+    }
+    public void setSala(Sala sala) {
+        this.sala = sala;
+    }
+    public void setSalaAgendada(Sala salaAgendada) {
+        this.salaAgendada = salaAgendada;
+    }
+    public void setPalestrantes(ArrayList<String> palestrantes) {
+        this.palestrantes = palestrantes;
+    }
+    public void setCancelada(boolean cancelada) {
+        this.cancelada = cancelada;
+    }
 
     
 

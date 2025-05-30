@@ -53,5 +53,25 @@ public class Sala {
             return false;
         }
     }
+    public Sala getSalaAgendada() {
+        return salaAgendada;
+    }
+    public void setSalaAgendada(Sala salaAgendada) {
+        this.salaAgendada = salaAgendada;
+    }
+    public String getPalestrante() {
+        return palestrante;
+    }
+    public void setPalestrante(String palestrante) {
+        this.palestrante = palestrante;
+    }
+    public boolean isCancelada() {
+        return cancelada;
+    }
+    public void setCancelada(boolean cancelada) {
+        this.cancelada = cancelada;
+    }
+
+    
     
 }

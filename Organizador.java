@@ -1,16 +1,19 @@
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Date;
 
 public class Organizador extends Usuario {
     private String crpj;
     private List<Evento> eventosOrganizados;
 
+ 
 
-   public Organizador(String nomeUsuario, String email, String senha, int cpf, int telefone, Date dataCadastro) {
+
+    public Organizador(String nomeUsuario, String email, String senha, int cpf, int telefone,
+            java.sql.Date dataCadastro, String crpj, List<Evento> eventosOrganizados) {
         super(nomeUsuario, email, senha, cpf, telefone, dataCadastro);
+        this.crpj = crpj;
+        this.eventosOrganizados = eventosOrganizados;
     }
-
 
     public String getCrpj() {
         return crpj;

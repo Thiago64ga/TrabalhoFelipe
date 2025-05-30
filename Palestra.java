@@ -4,5 +4,19 @@ public class Palestra extends Atividade {
 
     public void disponibilizarMaterial() { }
     public void iniciarTransmissao() { }
+    public String getMaterialApoio() {
+        return materialApoio;
+    }
+    public void setMaterialApoio(String materialApoio) {
+        this.materialApoio = materialApoio;
+    }
+    public String getSlideUtil() {
+        return slideUtil;
+    }
+    public void setSlideUtil(String slideUtil) {
+        this.slideUtil = slideUtil;
+    }
+
+    
 }
 

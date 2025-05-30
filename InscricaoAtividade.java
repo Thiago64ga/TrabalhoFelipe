@@ -20,4 +20,36 @@ public class InscricaoAtividade {
         this.avaliacao = avaliacao;
         this.comentario = comentario;
    }
+   public Inscricao getInscricao() {
+    return inscricao;
+   }
+   public void setInscricao(Inscricao inscricao) {
+    this.inscricao = inscricao;
+   }
+   public Atividade getAtividade() {
+    return atividade;
+   }
+   public void setAtividade(Atividade atividade) {
+    this.atividade = atividade;
+   }
+   public boolean isPresenca() {
+    return presenca;
+   }
+   public void setPresenca(boolean presenca) {
+    this.presenca = presenca;
+   }
+   public int getAvaliacao() {
+    return avaliacao;
+   }
+   public void setAvaliacao(int avaliacao) {
+    this.avaliacao = avaliacao;
+   }
+   public String getComentario() {
+    return comentario;
+   }
+   public void setComentario(String comentario) {
+    this.comentario = comentario;
+   }
+
+   
 }
