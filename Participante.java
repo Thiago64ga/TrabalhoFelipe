@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Date;
 
 
 public class Participante extends Usuario{
@@ -9,8 +8,8 @@ public class Participante extends Usuario{
     private List<Inscricao> inscricoes = new ArrayList<>();
     private List<Certificado> certificados = new ArrayList<>();
 
-   public Participante(String nomeUsuario, String email, String senha, int cpf, int telefone, Date dataCadastro, String profissao) {
-    super(nomeUsuario, email, senha, cpf, telefone, dataCadastro);
+   public Participante(String nomeUsuario, String email, String senha, int cpf, int telefone,  String profissao) {
+    super(nomeUsuario, email, senha, cpf, telefone);
     this.profissao = profissao;
 }
 

@@ -2,25 +2,25 @@
 import java.util.List;
 
 public class Organizador extends Usuario {
-    private String crpj;
+    private String cnpj;
     private List<Evento> eventosOrganizados;
 
  
 
 
-    public Organizador(String nomeUsuario, String email, String senha, int cpf, int telefone,
-            java.sql.Date dataCadastro, String crpj, List<Evento> eventosOrganizados) {
-        super(nomeUsuario, email, senha, cpf, telefone, dataCadastro);
-        this.crpj = crpj;
-        this.eventosOrganizados = eventosOrganizados;
+    public Organizador(Usuario usuario, String cnpj, List<Evento> eventosOrganizados) {
+    super(usuario.getnomeUsuario(), usuario.getEmail(), usuario.getSenha(), usuario.getCpf(), usuario.getTelefone());
+    this.cnpj = cnpj;
+    this.eventosOrganizados = eventosOrganizados;
+}
+
+
+    public String getcnpj() {
+        return cnpj;
     }
 
-    public String getCrpj() {
-        return crpj;
-    }
-
-    public void setCrpj(String crpj) {
-        this.crpj = crpj;
+    public void setcnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     public Evento criarEvento(String nome, String descricao, String local, String status) {
@@ -49,4 +49,14 @@ public class Organizador extends Usuario {
     public List<Evento> getEventosOrganizados() {
         return eventosOrganizados;
     }
+
+
+    @Override
+    public String toString() {
+        return "Organizador [cnpj=" + cnpj + ", eventosOrganizados=" + eventosOrganizados + ","
+                + super.toString() + "]";
+    }
+
+
+
 }

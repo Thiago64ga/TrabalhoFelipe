@@ -1,4 +1,3 @@
-import java.sql.Date;
 
 public class Usuario {
 
@@ -7,18 +6,28 @@ public class Usuario {
     private String senha;
     private int cpf;
     private int telefone;
-    private Date dataCadastro;
    
    
 
-    public Usuario(String nomeUsuario, String email, String senha, int cpf,int telefone,  Date dataCadastro) {
+    public Usuario(String nomeUsuario, String email, String senha, int cpf,int telefone) {
         this.nomeUsuario = nomeUsuario;
         this.email = email;
         this.senha = senha;
         this.cpf = cpf;
-        this.dataCadastro = dataCadastro;
         this.telefone = telefone;
     }
+
+          public String toString() {
+    return "Usuário  " +
+           "nome='" + nomeUsuario + '\'' +
+           ", email='" + email + '\'' +
+           ", senha='" + senha + '\'' +
+           ", cpf=" + cpf +
+           ", telefone=" + telefone +
+           '}';
+}
+
+    public Usuario( ){}
 
 
      public String getnomeUsuario() {return nomeUsuario;}
@@ -40,21 +49,6 @@ public class Usuario {
     public int getTelefone() { return telefone;}
 
     public void setTelefone(int telefone) { this.telefone = telefone;}
-
-    public Date getDataCadastro() {     return dataCadastro;}
-    
-    public void setDataCadastro(Date dataCadastro) {this.dataCadastro = dataCadastro;}
-
-
-        public void cadatrar(String nomeUsuario, String email, String senha, int cpf, int telefone, Date dataCadastro) {
-        this.nomeUsuario = nomeUsuario;
-        this.email = email;
-        this.senha = senha;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.dataCadastro = dataCadastro;
-
-         }
 
 
         public boolean autenticar (String email,String senha){
