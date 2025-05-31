@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class InscricaoAtividade {
     private Inscricao inscricao;
     private Atividade atividade;
@@ -5,10 +7,10 @@ public class InscricaoAtividade {
     private int avaliacao;
     private String comentario;
 
-    public InscricaoAtividade(Inscricao inscricao, Atividade atividade, boolean presenca,
-            int avaliacao, String comentario) {
-        this.inscricao = inscricao;
-        this.atividade = atividade;
+     public InscricaoAtividade(Inscricao inscricao, Atividade atividade, 
+                             boolean presenca, int avaliacao, String comentario) {
+        this.inscricao = Objects.requireNonNull(inscricao);
+        this.atividade = Objects.requireNonNull(atividade);  
         this.presenca = presenca;
         this.avaliacao = avaliacao;
         this.comentario = comentario;
@@ -50,6 +52,17 @@ public class InscricaoAtividade {
    public void setComentario(String comentario) {
     this.comentario = comentario;
    }
-
+   @Override
+    public String toString() {
+        return String.format(
+            "InscricaoAtividade[\n  Inscricao: %s\n  Atividade: %s\n  Palestrantes: %s\n  Presença: %s\n  Avaliação: %d\n  Comentário: %s\n]",
+            inscricao,
+            atividade.getTitulo(),
+            String.join(", ", atividade.getPalestrantes()),  // Acessa os palestrantes da atividade
+            presenca ? "Confirmada" : "Não confirmada",
+            avaliacao,
+            comentario
+        );
+    }
    
 }

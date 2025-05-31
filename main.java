@@ -44,7 +44,8 @@ public class main {
 
         Date inicio = new Date(); 
         Date fim = new Date();
-        Atividade a1 = e1.criarAtividade("POO", "Programação Orientada a Objeto", inicio, fim, 10, "Aula", s1, "Francisco");
+        Atividade a1 = e1.criarAtividade("POO", "Programação Orientada a Objeto", inicio, fim, 10, "Aula", s1,
+                                         "Francisco");
         System.out.println(a1.getTitulo());
         System.out.println(e1.toString());
         e1.cancelarEvento();
@@ -94,6 +95,32 @@ public class main {
         pa1.cancelarInscricao(e1);
         System.out.println();
         System.out.println(pa1.toString());
+        System.out.println("Separaçao");
+
+
+
+        // Teste Inciçao de Atividade
+        Inscricao in1 = new Inscricao(pa1, e1);
+        InscricaoAtividade ia1 = new InscricaoAtividade(in1, w1, true, 15, "Muito bom ");
+        ia1.avaliarAtividade(8, "Bom");
+        System.out.println(ia1.toString());
+        ia1.avaliarAtividade(9, "Legal");
+        System.out.println("Separa");
+        System.out.println(ia1.toString());
+
+        //Teste Pagamento
+
+        Pagamento pag1 = new Pagamento(25, fim, null, "Cartão");
+        pag1.processar();
+        System.out.println(pag1.toString());
+        System.out.println();
+        pag1.confirmar();
+        System.out.println(pag1.toString());
+        System.out.println();
+        pag1.estornar();
+        System.out.println(pag1.toString());
+
+
 
 
 

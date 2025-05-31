@@ -59,5 +59,14 @@ public class Certificado {
       }
     }
 
+
+      @Override
+      public String toString() {
+        return "Certificado [codigo=" + codigo + ", dataEmissao=" + dataEmissao + ", cargaHoraria=" + cargaHoraria
+                + "]";
+      }
+
+    
+
     
 }

@@ -63,6 +63,12 @@ public void setMetodoPagamento(String metodoPagamento) {
     this.metodoPagamento = metodoPagamento;
 }
 
+@Override
+public String toString() {
+    return "Pagamento [valor=" + valor + ", dataPagamento=" + dataPagamento + ", statusPagamento=" + statusPagamento
+            + ", metodoPagamento=" + metodoPagamento + "]";
+}
+
 
 
 

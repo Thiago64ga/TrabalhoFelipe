@@ -28,7 +28,7 @@ public class Participante extends Usuario{
      }
 
      public void vizualizarCertificado(Evento evento , Certificado Certificado){
-
+        
      }
 
      public String getProfissao() {
@@ -45,7 +45,7 @@ public class Participante extends Usuario{
 
      @Override
      public String toString() {
-        return "Participante [profissao=" + profissao + ", inscricoes=" + inscricoes.toString() + ", certificados=" + certificados
+        return "Participante [profissao=" + profissao + ", inscricoes=" + inscricoes + ", certificados=" + certificados
                 + ", nomeUsuario()=" + getnomeUsuario() + ", Email()=" + getEmail() + ", Telefone()="
                 + getTelefone() + "]";
      }

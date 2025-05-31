@@ -6,21 +6,18 @@ public class Palestra extends Atividade {
 
 
 
-    public Palestra(Atividade atividade, String materialApoio,
-            String slideUtil) {
-        super(atividade.getTitulo(),atividade.getDescricao(), atividade.getDataHorarioInicio(),atividade.getDataHorarioFim(),
-        atividade.getCapacidade(),atividade.getTipoDeAtividade(),atividade.getSala(),atividade.getPalestrantes(),
-        atividade.getPalestrantes(),atividade.isCancelada());
-        this.materialApoio = materialApoio;
-        this.slideUtil = slideUtil;
-    }
+    public Palestra(Atividade atividade, String materialApoio, String slideUtil) {
+    super(atividade); 
+    this.materialApoio = materialApoio;
+    this.slideUtil = slideUtil;
+}
 
     
     public void disponibilizarMaterial(String materialApoio) {
         System.out.println(materialApoio);
      }
     public void iniciarTransmissao() {
-        System.out.println("Passando Slide");
+        System.out.println("Iniciar transmissao ");
      }
     public String getMaterialApoio() {
         return materialApoio;

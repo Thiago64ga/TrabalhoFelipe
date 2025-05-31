@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Atividade {
     private String titulo;
@@ -9,11 +11,8 @@ public class Atividade {
     private int capacidade;
     private String tipoDeAtividade;
     private Sala sala;
-    private ArrayList<String> palestrantes;
     private boolean cancelada = false;
-    private ArrayList<String> convidados;
-    private ArrayList<String> materiais;
-
+    private List<String> palestrantes = new ArrayList<>();
 
     
 
@@ -26,9 +25,8 @@ public class Atividade {
     this.capacidade = capacidade;
     this.tipoDeAtividade = tipo;
     this.sala = sala;
-    this.convidados = convidados;
-    this.materiais = materiais;
     this.cancelada = cancelada;
+    
 }
 
 
@@ -123,8 +121,8 @@ public class Atividade {
 
    
 
-    public ArrayList<String> getPalestrantes() {
-        return palestrantes;
+     public List<String> getPalestrantes() {
+        return new ArrayList<>(palestrantes); 
     }
 
     public void setPalestrantes(ArrayList<String> palestrantes) {
@@ -139,17 +137,36 @@ public class Atividade {
         this.cancelada = cancelada;
     }
 
+    
+
+    
+    public Atividade(Atividade outra) {
+    this.titulo = outra.titulo;
+    this.descricao = outra.descricao;
+    this.dataHorarioInicio = outra.dataHorarioInicio;
+    this.dataHorarioFim = outra.dataHorarioFim;
+    this.capacidade = outra.capacidade;
+    this.tipoDeAtividade = outra.tipoDeAtividade;
+    this.sala = outra.sala; 
+    this.cancelada = outra.cancelada;
+    this.palestrantes = new ArrayList<>(outra.palestrantes); 
+}
+
+
+
     @Override
-    public String toString() {
-        return "Atividade: " + titulo +
-               "\nDescrição: " + descricao +
-               "\nInício: " + dataHorarioInicio +
-               "\nFim: " + dataHorarioFim +
-               "\nCapacidade: " + capacidade +
-               "\nTipo: " + tipoDeAtividade +
-               "\nSala: " + (sala != null ? sala.getNome() : "Não definida") +
-               "\nPalestrantes: " + palestrantes ;
-    }
+public String toString() {
+    return "Atividade: " + titulo +
+           "\nDescrição: " + descricao +
+           "\nInício: " + dataHorarioInicio +
+           "\nFim: " + dataHorarioFim +
+           "\nCapacidade: " + capacidade +
+           "\nTipo: " + tipoDeAtividade +
+           "\nSala: " + (sala != null ? sala.getNome() : "Não definida") +
+           "\nPalestrantes: " + (palestrantes != null ? 
+               palestrantes.stream().collect(Collectors.joining(", ")) : 
+               "Nenhum palestrante");
+}
 
     
 }
