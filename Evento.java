@@ -38,5 +38,6 @@ public class Evento {
     public Organizador getOrganizador() {
         return organizador;
     }
+
     
 }

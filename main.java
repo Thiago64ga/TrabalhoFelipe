@@ -23,6 +23,12 @@ public class main {
         List<Evento> eventos = new ArrayList<>();
         Organizador o1 = new Organizador(u1 , "1235456 ", eventos);
         System.out.println(o1.toString());
+        o1.criarEvento("Tech ", "Tecnologia", "Narnia", "Breve") ;
+        System.out.println();
+        System.out.println(o1.toString());
+        o1.gerenciarEvento( "Tech","Andamento");
+        System.out.println();
+        System.out.println(o1.toString());
         
     }    
 }

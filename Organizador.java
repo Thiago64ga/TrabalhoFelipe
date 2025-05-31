@@ -29,13 +29,15 @@ public class Organizador extends Usuario {
         return novoEvento;
     }
 
-    public void gerenciarEvento(Evento evento, String novoStatus) {
-        if (eventosOrganizados.contains(evento)) {
-            evento.setStatusEvento(novoStatus);
-        } else {
-            
+    public void gerenciarEvento(String nomeEvento, String Status) {
+       for (Evento evento : eventosOrganizados) {
+        if (evento.getNome().trim().equalsIgnoreCase(nomeEvento.trim())) {
+            evento.setStatusEvento(Status);
+            return;
         }
     }
+    }
+
 
     public void emitirRelatorio() {
         System.out.println("==== Relatório de Eventos ====");
@@ -48,14 +50,27 @@ public class Organizador extends Usuario {
 
     public List<Evento> getEventosOrganizados() {
         return eventosOrganizados;
-    }
-
+    }  
 
     @Override
-    public String toString() {
-        return "Organizador [cnpj=" + cnpj + ", eventosOrganizados=" + eventosOrganizados + ","
-                + super.toString() + "]";
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Organizador: ").append(getnomeUsuario()).append("\n");
+    sb.append("CNPJ: ").append(cnpj).append("\n");
+    sb.append("Eventos Organizados:\n");
+
+    if (eventosOrganizados.isEmpty()) {
+        sb.append("  Nenhum evento cadastrado.\n");
+    } else {
+        for (Evento evento : eventosOrganizados) {
+            sb.append("  - ").append(evento.getNome()).append("\n");
+            sb.append("  - ").append(evento.getStatusEvento());
+        }
     }
+
+    return sb.toString();
+}
+
 
 
 
