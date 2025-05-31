@@ -3,9 +3,26 @@ public class Workshop extends Atividade {
     private int duracaoHoras;
     private boolean possuiCertificado;
 
+
+
+    public Workshop(Atividade atividade, String materiaisNecessarios,int duracaoHoras,boolean possuiCertificado) {
+        super(atividade.getTitulo(),atividade.getDescricao(), atividade.getDataHorarioInicio(),atividade.getDataHorarioFim(),
+        atividade.getCapacidade(),atividade.getTipoDeAtividade(),atividade.getSala(),atividade.getPalestrantes(),
+        atividade.getPalestrantes(),atividade.isCancelada());
+        this.materiaisNecessarios = materiaisNecessarios;
+        this.duracaoHoras = duracaoHoras;
+        this.possuiCertificado = possuiCertificado;
+    }
+
+
+
     public void definirPreRequisito(String requisitos) { }
-    public void avaliarParticipante() { }
-    public void avaliarParticipantes(){ }
+    public void gerenciarMaterias (){
+    }
+
+    public void avaliarParticipante(boolean possuiCertificado) {
+        possuiCertificado = true;
+     }
     public String getMateriaisNecessarios() {
         return materiaisNecessarios;
     }

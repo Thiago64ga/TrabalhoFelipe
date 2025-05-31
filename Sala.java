@@ -41,9 +41,26 @@ public class Sala {
     }
 
       public boolean verificarDisponibilidade() {
-        return disponivel;
+        if (true){
+            System.out.println("Sala Disponivel!!!!  ");
+            return true;
+
+        }else{
+            System.out.println("Sala Nao disponivel");
+
+            return false;
+            
+        }
+        
+        
+        
+        
+
     }
 
+    public Sala(int capacidade) {
+        this.capacidade = capacidade;
+    }
     public boolean reservar() {
         if (disponivel) {
             disponivel = false;
@@ -71,6 +88,8 @@ public class Sala {
     public void setCancelada(boolean cancelada) {
         this.cancelada = cancelada;
     }
+    
+    
 
     
     

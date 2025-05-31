@@ -9,12 +9,32 @@ public class Atividade {
     private int capacidade;
     private String tipoDeAtividade;
     private Sala sala;
-    private Sala salaAgendada;
     private ArrayList<String> palestrantes;
-    private boolean cancelada;
+    private boolean cancelada = false;
+    private ArrayList<String> convidados;
+    private ArrayList<String> materiais;
+
+
+    
+
+    public Atividade(String titulo, String descricao, Date inicio, Date fim, int capacidade,
+                 String tipo, Sala sala, ArrayList<String> convidados, ArrayList<String> materiais, boolean cancelada) {
+    this.titulo = titulo;
+    this.descricao = descricao;
+    this.dataHorarioInicio = inicio;
+    this.dataHorarioFim = fim;
+    this.capacidade = capacidade;
+    this.tipoDeAtividade = tipo;
+    this.sala = sala;
+    this.convidados = convidados;
+    this.materiais = materiais;
+    this.cancelada = cancelada;
+}
+
+
 
     public Atividade(String titulo, String descricao, Date dataHorarioInicio, Date dataHorarioFim, int capacidade,
-            String tipoDeAtividade, Sala sala, Sala salaAgendada, String palestrante, boolean cancelada) {
+                     String tipoDeAtividade, Sala sala, String palestrante, boolean cancelada) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataHorarioInicio = dataHorarioInicio;
@@ -22,86 +42,114 @@ public class Atividade {
         this.capacidade = capacidade;
         this.tipoDeAtividade = tipoDeAtividade;
         this.sala = sala;
-        this.salaAgendada = salaAgendada;
         this.palestrantes = new ArrayList<>();
-        this.cancelada = false;
+        if (palestrante != null && !palestrante.isEmpty()) {
+            this.palestrantes.add(palestrante);
         }
-    public Atividade() {
+        this.cancelada = cancelada;
     }
+
+
+    public void adicionarPalestrante(String palestrante) {
+        if (palestrante != null && !palestrante.isEmpty()) {
+            palestrantes.add(palestrante);
+            System.out.println("Palestrante adicionado: " + palestrante);
+        }
+    }
+
+    public void cancelarAtividade() {
+        this.cancelada = true;
+        System.out.println("Atividade '" + titulo + "' foi cancelada.");
+    }
+
+
+    // ==== GETTERS E SETTERS ====
+
     public String getTitulo() {
         return titulo;
     }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getDescricao() {
         return descricao;
     }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public Date getDataHorarioInicio() {
         return dataHorarioInicio;
     }
+
+    public void setDataHorarioInicio(Date dataHorarioInicio) {
+        this.dataHorarioInicio = dataHorarioInicio;
+    }
+
     public Date getDataHorarioFim() {
         return dataHorarioFim;
     }
+
+    public void setDataHorarioFim(Date dataHorarioFim) {
+        this.dataHorarioFim = dataHorarioFim;
+    }
+
     public int getCapacidade() {
         return capacidade;
     }
+
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public String getTipoDeAtividade() {
+        return tipoDeAtividade;
+    }
+
+    public void setTipoDeAtividade(String tipoDeAtividade) {
+        this.tipoDeAtividade = tipoDeAtividade;
+    }
+
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
+    }
+
+   
+
+    public ArrayList<String> getPalestrantes() {
+        return palestrantes;
+    }
+
+    public void setPalestrantes(ArrayList<String> palestrantes) {
+        this.palestrantes = palestrantes;
+    }
+
     public boolean isCancelada() {
         return cancelada;
     }
 
-    public void agendarSala(Sala sala) {
-        this.sala = sala;
-    }
-
-    public void adicionarPalestrante(String palestrante) {
-        palestrantes.add(palestrante);
-    }
-
-    public void cancelarAtividade() {
-        this.cancelada = false;
-    }
-    public String getTipoDeAtividade() {
-        return tipoDeAtividade;
-    }
-    public Sala getSala() {
-        return sala;
-    }
-    public Sala getSalaAgendada() {
-        return salaAgendada;
-    }
-    public ArrayList<String> getPalestrantes() {
-        return palestrantes;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-    public void setDataHorarioInicio(Date dataHorarioInicio) {
-        this.dataHorarioInicio = dataHorarioInicio;
-    }
-    public void setDataHorarioFim(Date dataHorarioFim) {
-        this.dataHorarioFim = dataHorarioFim;
-    }
-    public void setCapacidade(int capacidade) {
-        this.capacidade = capacidade;
-    }
-    public void setTipoDeAtividade(String tipoDeAtividade) {
-        this.tipoDeAtividade = tipoDeAtividade;
-    }
-    public void setSala(Sala sala) {
-        this.sala = sala;
-    }
-    public void setSalaAgendada(Sala salaAgendada) {
-        this.salaAgendada = salaAgendada;
-    }
-    public void setPalestrantes(ArrayList<String> palestrantes) {
-        this.palestrantes = palestrantes;
-    }
     public void setCancelada(boolean cancelada) {
         this.cancelada = cancelada;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Atividade: " + titulo +
+               "\nDescrição: " + descricao +
+               "\nInício: " + dataHorarioInicio +
+               "\nFim: " + dataHorarioFim +
+               "\nCapacidade: " + capacidade +
+               "\nTipo: " + tipoDeAtividade +
+               "\nSala: " + (sala != null ? sala.getNome() : "Não definida") +
+               "\nPalestrantes: " + palestrantes ;
+    }
 
     
-}    
+}

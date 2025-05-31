@@ -40,11 +40,11 @@ public class Organizador extends Usuario {
 
 
     public void emitirRelatorio() {
-        System.out.println("==== Relatório de Eventos ====");
         for (Evento evento : eventosOrganizados) {
-            System.out.println("Evento: " + evento.getNome() +
-                               " | Status: " + evento.getStatusEvento() +
-                               " | Local: " + evento.getLocal());
+            System.out.println( "Relatorio \n"+
+                                "Evento: " + evento.getNome() +
+                                " | Status: " + evento.getStatusEvento() +
+                                " | Local: " + evento.getLocal());
         }
     }
 
