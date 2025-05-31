@@ -20,9 +20,12 @@ public class Workshop extends Atividade {
     public void gerenciarMaterias (){
     }
 
-    public void avaliarParticipante(boolean possuiCertificado) {
-        possuiCertificado = true;
-     }
+    public void avaliarParticipante() {
+        System.out.println("O senhor tem o certificado");
+    }
+
+
+     
     public String getMateriaisNecessarios() {
         return materiaisNecessarios;
     }

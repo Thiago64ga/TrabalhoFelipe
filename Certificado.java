@@ -44,14 +44,20 @@ public class Certificado {
         this.cargaHoraria = cargaHoraria;
     }
 
-     public void gerar(){}
+     public void gerar(String emailDestino) {
+     this.dataEmissao = new Date();
+     enviarPorEmail(emailDestino);
+     }
 
      public boolean validar() {
         return codigo != null && !codigo.isEmpty();
     }
 
-      public void enviarPorEmail(String emailDestino) {}
-
+      public void enviarPorEmail(String emailDestino) {
+        if (validar()) {
+        System.out.println("Certificado enviado para: " + emailDestino);
+      }
+    }
 
     
 }

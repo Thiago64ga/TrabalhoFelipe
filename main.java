@@ -71,7 +71,33 @@ public class main {
         Workshop w1 = new Workshop(p1, "Livros", 10, true);
         w1.definirPreRequisito("Estudante de Informatica");
         w1.gerenciarMaterias();
-        w1.avaliarParticipante(true);
+        System.out.println();
+        w1.avaliarParticipante();
+
+        // teste de Paticipante e Certificado
+
+        Certificado c1 = new Certificado("T23fe", inicio, fim);
+        List<Inscricao> inscritos = new ArrayList<>();
+        List<Certificado> certificados = new ArrayList<>();
+        Usuario u2 = new Usuario("Saulo", "Saulo123@gmail", "Saulo12", 123456789, 999999999);
+        Participante pa1 =  new Participante(u2, "Professor", inscritos, certificados);
+        pa1.inscreverEvento(e1);
+        System.out.println(pa1.toString());
+        System.out.println( );
+        pa1.vizualizarCertificado(e1, c1);
+        System.out.println(pa1.toString());
+        c1.gerar("Saulo123@gmail.com");
+        c1.enviarPorEmail("Saulo123@gmail.com");
+        c1.validar();
+        pa1.vizualizarCertificado(e1, c1);
+        System.out.println(pa1.toString());
+        pa1.cancelarInscricao(e1);
+        System.out.println();
+        System.out.println(pa1.toString());
+
+
+
+
 
 
         

@@ -41,5 +41,11 @@ public class Inscricao {
         return evento;
     }
 
+   @Override
+public String toString() {
+    return "Inscricao [dataInscricao=" + dataInscricao + ", statusInscricao=" + statusInscricao 
+            + ", presencaConfirmada=" + presencaConfirmada + ", evento=" + evento + "]";
+} 
+
     
 }
